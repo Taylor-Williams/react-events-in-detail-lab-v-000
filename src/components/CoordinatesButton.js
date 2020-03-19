@@ -3,7 +3,9 @@ import React from 'react'
 export default class CoordinatesButton extends React.Component {
 
   getCoords = (event) => {
-    console.log([event.clientX, event.clientY])
+    let coords = [event.clientX, event.clientY]
+    console.log("mouse coordinates: " + coords)
+    this.props.onReceiveCoordinates = coords
   }
   render() {
     return <button onclick={this.getcoords} />
